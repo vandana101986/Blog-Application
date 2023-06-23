@@ -26,5 +26,25 @@
         </div>
     </div>
 
+    <br/>
+    <div class="row">
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="table-dark">
+                <th style="width:10%">#</th>
+                <th style="width:10%">Title</th>
+                <th style="width:10%">Short shortDescription</th>
+                <th style="width:10%">createdOn</th>
+                <th style="width:10%">Actions</th>
+            </thead>
+            <tbody>
+                <tr th:each="post, postStat: ${posts}">
+                    <td th:text="${postStat.count}">1</td>
+                    <td th:text="${post.title}">ticket title</td>
+                    <td th:text="${post.shortDescription}">Short shortDescription</td>
+                    <td th:text="${#temporals.format(post.createdOn,'dd-MMM-yyyy')}">01 JAN 2022</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
