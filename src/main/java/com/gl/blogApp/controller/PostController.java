@@ -23,6 +23,6 @@ public class PostController {
 	public String fetchAllPosts(Model model) {
 		List<Post> posts = this.postService.findAllPost();
 		model.addAttribute("posts", posts);
-		return "/admin/posts";
+		return "admin/posts";
 	}
 }
